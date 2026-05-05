@@ -1,6 +1,6 @@
 import React , { useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
-import logo from "../assets/vastra.png"
+import logo from "../assets/Vastra.png"
 import axios from 'axios'
 import { authDataContext } from '../context/AuthContext'
 import { adminDataContext } from '../context/AdminContext'
