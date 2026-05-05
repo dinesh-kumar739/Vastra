@@ -1,5 +1,5 @@
 import React from 'react'
-import img from "../assets/vastra.png"
+import img from "../assets/Vastra.png"
 
 function Footer() {
   return (
