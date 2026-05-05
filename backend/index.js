@@ -15,7 +15,7 @@ let app=express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:["http://localhost:5173","https://vastra-ah4mmhxer-dinesh-kumar739.vercel.app"],
+    origin:["http://localhost:5173","https://vastra-drab.vercel.app"],
     credentials:true
 }))
 
