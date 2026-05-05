@@ -22,19 +22,22 @@ function Login() {
 
     const  AdminLogin=async (e) => {
         e.preventDefault()
+        setLoading(true)
         try {
             const result = await axios.post( serverUrl + "/api/auth/adminLogin" , {
                 email, password
             }, { withCredentials: true })
             console.log(result.data)
-            toast.success("AdminLogin Successfully")
             if(result.data) {
-                setAdminData(result.data)
+                toast.success("AdminLogin Successfully")
+                setAdminData({ email })
                 navigate("/")
             }
         } catch (error) {
             console.log(error)
             toast.error("AdminLogin Failed")
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -46,12 +49,12 @@ function Login() {
             </div>
             <div className='w-[100%] h-[100px] flex items-center justify-center flex-col gap-[0px]'>
                 <span className='text-[25px] font-semibold text-[#d97706]'>Registration Page</span>
-                <span className='text-[16px]'>wellcome to vastra , Applt to Admin Login</span>
+                <span className='text-[16px]'>wellcome to vastra , Apply to Admin Login</span>
             </div>
             <div className='max-w-[600px] w-[90%] h-[400px] bg-[#00000025] border-[1px] border-[#d97706] backdrop:blur-2xl rounded-lg shadow-lg flex items-center justify-center'>
                 <form action="" onSubmit={AdminLogin} className='w-[90%] h-[90%] flex flex-col items-center justify-start gap-[20px]'>
                     <div className='w-[90%] h-[400px] flex flex-col items-center justify-center gap-[15px] relative'>
-                        <input type="mail" className='w-[100%] h-[50px] border-[2px] border-[#d97706] backdrop-blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#d97706] px-[20px] font-semibold' placeholder='Email' required onChange={(e)=>setEmail(e.target.value)} value={email}/>
+                        <input type="email" className='w-[100%] h-[50px] border-[2px] border-[#d97706] backdrop-blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#d97706] px-[20px] font-semibold' placeholder='Email' required onChange={(e)=>setEmail(e.target.value)} value={email}/>
                         <input type={show?"text":"password"} className='w-[100%] h-[50px] border-[2px] border-[#d97706] backdrop-blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#d97706] px-[20px] font-semibold' placeholder='Password' required onChange={(e)=>setPassword(e.target.value)} value={password}/>
                         {show && <IoEyeOutline className='w-[20px] bottom-[50%] h-[20px] text-[#d97706] cursor-pointer absolute right-[5%]'onClick={()=>setShow(prev => !prev)}/>}
                         {!show && <IoEyeOffOutline className='w-[20px] h-[20px] bottom-[50%] cursor-pointer text-[#d97706] absolute right-[5%]' onClick={()=>setShow(prev => !prev)}/>}
