@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { useContext } from 'react'
-import { authDataContext } from './authContext'
+import { authDataContext } from './AuthContext'
 import { Await } from 'react-router-dom'
 import axios from 'axios'
 // import { linkWithCredential } from 'firebase/auth'
