@@ -59,8 +59,8 @@ function registration() {
   return (
     <div className='w-[100vw] h-[100vh] bg-gradient-to-l from-[#ffffff] to-[#bfd9f3] text-[#000000] flex flex-col items-center justify-start'>
         <div className='w-[100%] h-[80px] flex items-center justify-start px-[30px] gap-[0px] cursor-pointer' onClick={()=>navigate("/")}>
-            <img className='w-[100px]' src={Logo} />
-            <h1 className='text-[25px] text-[#D97706] font-semibold font-sans'>Vastra</h1>
+            <img className='w-[35px]' src={Logo} />
+            <h1 className='text-[25px] text-[#D97706] font-semibold font-sans'>astra</h1>
         </div>
         <div className='w-[100%] h-[100px] flex items-center justify-center flex-col gap-[0px]'>
             <span className='text-[25px] font-semibold'>Registration Page</span>
