@@ -2,7 +2,7 @@ import React,{useState , useContext} from 'react'
 import axios from 'axios'
 import Nav from '../component/Nav'
 import Sidebar from '../component/Sidebar'
-import img from "../assets/Upload.jpeg"
+import img from "../assets/upload.jpeg"
 import { authDataContext } from '../context/AuthContext'
 import { toast } from 'react-toastify'
 import Loading from '../component/Loading'
